@@ -1,0 +1,16 @@
+# ProblemResponseError
+
+An RFC 7807 problem details response.
+
+
+## Fields
+
+| Field                                                              | Type                                                               | Required                                                           | Description                                                        | Example                                                            |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `Type`                                                             | *string*                                                           | :heavy_check_mark:                                                 | N/A                                                                | about:blank                                                        |
+| `Title`                                                            | *string*                                                           | :heavy_check_mark:                                                 | N/A                                                                | rate_limited                                                       |
+| `Status`                                                           | *int64*                                                            | :heavy_check_mark:                                                 | N/A                                                                | 429                                                                |
+| `Code`                                                             | *string*                                                           | :heavy_check_mark:                                                 | N/A                                                                | rate_limited                                                       |
+| `Detail`                                                           | **string*                                                          | :heavy_minus_sign:                                                 | N/A                                                                | try again in 5000 ms                                               |
+| `Details`                                                          | [*components.Details](../../models/components/details.md)          | :heavy_minus_sign:                                                 | N/A                                                                | {<br/>"try_again_in_ms": 5000<br/>}                                |
+| `HTTPMeta`                                                         | [components.HTTPMetadata](../../models/components/httpmetadata.md) | :heavy_check_mark:                                                 | N/A                                                                |                                                                    |

@@ -1,0 +1,230 @@
+lockVersion: 2.0.0
+id: ddf9e346-bb43-4ccc-aaae-95e233eb6f3f
+management:
+  docChecksum: 5be1033d3fcd17c8b64f613200c1ef01
+  docVersion: 1.0.0
+  speakeasyVersion: 1.621.1
+  generationVersion: 2.708.2
+  releaseVersion: 0.0.2
+  configChecksum: 0f69a66bb8df56df0a1727293f910ef9
+features:
+  go:
+    additionalDependencies: 0.1.0
+    constsAndDefaults: 0.1.12
+    core: 3.11.0
+    defaultEnabledRetries: 0.2.0
+    devContainers: 2.90.0
+    envVarSecurityUsage: 0.3.2
+    globalSecurity: 2.82.12
+    globalSecurityCallbacks: 0.1.0
+    globalSecurityFlattening: 0.1.0
+    globalServerURLs: 2.82.3
+    intellisenseMarkdownSupport: 0.1.0
+    nullables: 0.2.0
+    responseFormat: 0.1.2
+    retries: 2.84.2
+    sdkHooks: 0.2.0
+    unions: 2.85.14
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .gitattributes
+  - /models/apierrors/problemresponseerror.go
+  - /models/components/assetrefdto.go
+  - /models/components/cawgidentitydto.go
+  - /models/components/cawgverifydto.go
+  - /models/components/healthzresponse.go
+  - /models/components/httpmetadata.go
+  - /models/components/limitsdto.go
+  - /models/components/presignedurl.go
+  - /models/components/presignresponse.go
+  - /models/components/problemresponseerror.go
+  - /models/components/s3.go
+  - /models/components/security.go
+  - /models/components/signerrefdto.go
+  - /models/components/signrequest.go
+  - /models/components/signresponse.go
+  - /models/components/trustlistresponse.go
+  - /models/components/verifyrequest.go
+  - /models/components/verifyresponse.go
+  - /models/operations/gethealthcheck.go
+  - /models/operations/getpresignedurl.go
+  - /models/operations/gettrustlist.go
+  - /models/operations/signasset.go
+  - /models/operations/verifyasset.go
+  - USAGE.md
+  - assetmanagement.go
+  - docs/models/apierrors/problemresponseerror.md
+  - docs/models/components/alg.md
+  - docs/models/components/assetrefdto.md
+  - docs/models/components/assurance.md
+  - docs/models/components/cawgidentitydto.md
+  - docs/models/components/cawgverifydto.md
+  - docs/models/components/data.md
+  - docs/models/components/default.md
+  - docs/models/components/details.md
+  - docs/models/components/evidence.md
+  - docs/models/components/healthzresponse.md
+  - docs/models/components/httpmetadata.md
+  - docs/models/components/limitsdto.md
+  - docs/models/components/mode.md
+  - docs/models/components/policy.md
+  - docs/models/components/presignedurl.md
+  - docs/models/components/presignresponse.md
+  - docs/models/components/s3.md
+  - docs/models/components/security.md
+  - docs/models/components/signer.md
+  - docs/models/components/signerrefdto.md
+  - docs/models/components/signerrefdtoenv.md
+  - docs/models/components/signerrefdtolocal.md
+  - docs/models/components/signerseparate.md
+  - docs/models/components/signerusemainsigner.md
+  - docs/models/components/signingalg.md
+  - docs/models/components/signrequest.md
+  - docs/models/components/signresponse.md
+  - docs/models/components/trustlistresponse.md
+  - docs/models/components/typeenv.md
+  - docs/models/components/typelocal.md
+  - docs/models/components/typeseparate.md
+  - docs/models/components/typeusemainsigner.md
+  - docs/models/components/verifyrequest.md
+  - docs/models/components/verifyresponse.md
+  - docs/models/operations/gethealthcheckresponse.md
+  - docs/models/operations/getpresignedurlresponse.md
+  - docs/models/operations/gettrustlistresponse.md
+  - docs/models/operations/option.md
+  - docs/models/operations/signassetresponse.md
+  - docs/models/operations/verifyassetresponse.md
+  - docs/sdks/assetmanagement/README.md
+  - docs/sdks/que/README.md
+  - docs/sdks/utility/README.md
+  - go.mod
+  - internal/config/sdkconfiguration.go
+  - internal/hooks/hooks.go
+  - internal/utils/contenttype.go
+  - internal/utils/env.go
+  - internal/utils/form.go
+  - internal/utils/headers.go
+  - internal/utils/json.go
+  - internal/utils/pathparams.go
+  - internal/utils/queryparams.go
+  - internal/utils/requestbody.go
+  - internal/utils/retries.go
+  - internal/utils/security.go
+  - internal/utils/utils.go
+  - models/apierrors/apierror.go
+  - models/operations/options.go
+  - optionalnullable/optionalnullable.go
+  - optionalnullable/optionalnullable_test.go
+  - que.go
+  - retry/config.go
+  - types/bigint.go
+  - types/date.go
+  - types/datetime.go
+  - types/decimal.go
+  - types/pointers.go
+  - utility.go
+examples:
+  verifyAsset:
+    basic-verification:
+      requestBody:
+        application/json: {"asset": {"bucket": "que-assets-dev", "key": "uploads/photo.jpg"}, "mode": "summary", "allow_remote_manifests": false, "allow_insecure_remote_http": false, "include_certificates": true}
+      responses:
+        "200":
+          application/json: {"report": "<value>"}
+        "400":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "429":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "500":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+    detailed-verification:
+      requestBody:
+        application/json: {"asset": {"bucket": "que-assets-dev", "key": "uploads/document.pdf"}, "mode": "detailed", "allow_remote_manifests": true, "allow_insecure_remote_http": false, "include_certificates": true, "limits": {"max_asset_size_bytes": 52428800}}
+      responses:
+        "200":
+          application/json: {"report": "<value>"}
+        "400":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "429":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "500":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+    speakeasy-default-verify-asset:
+      requestBody:
+        application/json: {"asset": {"url": "https://example.com/assets/photo.jpg"}, "mode": "detailed", "allow_remote_manifests": false, "allow_insecure_remote_http": false, "include_certificates": true, "limits": {"max_asset_size_bytes": 104857600, "max_output_size_bytes": 104857600, "max_stream_copy_bytes": 104857600, "stream_timeout_ms": 30000}}
+      responses:
+        "200":
+          application/json: {"report": "<value>"}
+        "400":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "429":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "500":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+  signAsset:
+    basic-signing:
+      requestBody:
+        application/json: {"asset": {"bucket": "que-assets-dev", "key": "uploads/photo.jpg"}, "mode": "server_measure", "manifest_json": "{\"title\":\"Original Photograph\",\"assertions\":[{\"label\":\"stds.schema-org.CreativeWork\",\"data\":{\"@context\":\"https://schema.org\",\"@type\":\"CreativeWork\",\"author\":[{\"@type\":\"Person\",\"name\":\"Jane Photographer\"}]}}]}", "allow_insecure_remote_http": false}
+      responses:
+        "200":
+          application/json: {"assurance": "server_measured", "evidence": {"signer": "env_dev", "alg": "ES256"}, "asset_s3_uri": "s3://que-signed-assets/uuid/signed.jpg"}
+        "400":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "429":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "500":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+    advanced-signing:
+      requestBody:
+        application/json: {"asset": {"bucket": "que-assets-dev", "key": "uploads/document.pdf"}, "mode": "server_measure", "manifest_json": "{\"title\":\"Signed Document\",\"assertions\":[{\"label\":\"stds.schema-org.CreativeWork\",\"data\":{\"@context\":\"https://schema.org\",\"@type\":\"CreativeWork\",\"author\":[{\"@type\":\"Person\",\"name\":\"John Author\"}]}}]}", "allow_insecure_remote_http": false, "limits": {"max_asset_size_bytes": 104857600, "stream_timeout_ms": 60000}}
+      responses:
+        "200":
+          application/json: {"assurance": "server_measured", "evidence": {"signer": "env_dev", "alg": "ES256"}, "asset_s3_uri": "s3://que-signed-assets/uuid/signed.jpg"}
+        "400":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "429":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "500":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+    speakeasy-default-sign-asset:
+      requestBody:
+        application/json: {"asset": {"bucket": "que-assets-dev", "key": "uploads/user123/asset.jpg"}, "mode": "server_measure", "manifest_json": "{\"title\":\"Original Photograph\",\"format\":\"image/jpeg\",\"assertions\":[{\"label\":\"stds.schema-org.CreativeWork\",\"data\":{\"@context\":\"https://schema.org\",\"@type\":\"CreativeWork\",\"author\":[{\"@type\":\"Person\",\"name\":\"Jane Photographer\"}]}}]}", "allow_insecure_remote_http": false, "limits": {"max_asset_size_bytes": 104857600, "max_output_size_bytes": 104857600, "max_stream_copy_bytes": 104857600, "stream_timeout_ms": 30000}}
+      responses:
+        "200":
+          application/json: {"assurance": "server_measured", "evidence": {"signer": "env_dev", "alg": "ES256"}, "asset_s3_uri": "s3://que-signed-assets/uuid/signed.jpg"}
+        "400":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "429":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "500":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+  getHealthCheck:
+    speakeasy-default-get-health-check:
+      responses:
+        "200":
+          application/json: {"status": "healthy", "message": "Que API is running", "timestamp": 1755802800}
+  getTrustList:
+    speakeasy-default-get-trust-list:
+      responses:
+        "200":
+          application/json: {"version": "dev-1", "issued_at": "2024-01-15T10:00:00Z", "data": {"manufacturers": [], "cas": [], "policy": {"default": "allow"}}}
+        "401":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "429":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "500":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+  getPresignedUrl:
+    speakeasy-default-get-presigned-url:
+      responses:
+        "200":
+          application/json: {"url": "https://que-assets-dev.s3.us-east-2.amazonaws.com/uploads/user123/asset.jpg?AWSAccessKeyId=...&Signature=...&Expires=...", "key": "uploads/user123/asset.jpg"}
+        "401":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "429":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+        "500":
+          application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
+examplesVersion: 1.0.2

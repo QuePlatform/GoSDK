@@ -1,0 +1,37 @@
+speakeasyVersion: 1.621.1
+sources:
+    Que API:
+        sourceNamespace: que-api
+        sourceRevisionDigest: sha256:80df4c9999cdc7c286e30ee79425ec574be16294d3b8b890ffba773dce254dc8
+        sourceBlobDigest: sha256:022738a40948c2fe68b0f5fa760cf5197b333d62458755a7aefcdbb8b02030e3
+        tags:
+            - latest
+            - 1.0.0
+targets:
+    que:
+        source: Que API
+        sourceNamespace: que-api
+        sourceRevisionDigest: sha256:80df4c9999cdc7c286e30ee79425ec574be16294d3b8b890ffba773dce254dc8
+        sourceBlobDigest: sha256:022738a40948c2fe68b0f5fa760cf5197b333d62458755a7aefcdbb8b02030e3
+        codeSamplesNamespace: que-api-go-code-samples
+        codeSamplesRevisionDigest: sha256:f9ee0897034fac1730add87060d92762041043f0d4943dab3ce5d2d2cefd1dff
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Que API:
+            inputs:
+                - location: ./openapi.yaml
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/que-7x8/que/que-api
+    targets:
+        que:
+            target: go
+            source: Que API
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/que-7x8/que/que-api-go-code-samples
+                labelOverride:
+                    fixedValue: Go (SDK)
+                blocking: false

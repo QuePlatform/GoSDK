@@ -1,0 +1,19 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Que API:
+        inputs:
+            - location: ./openapi.yaml
+        output: .speakeasy/out.openapi.yaml
+        registry:
+            location: registry.speakeasyapi.dev/que-7x8/que/que-api
+targets:
+    que:
+        target: go
+        source: Que API
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/que-7x8/que/que-api-go-code-samples
+            labelOverride:
+                fixedValue: Go (SDK)
+            blocking: false
