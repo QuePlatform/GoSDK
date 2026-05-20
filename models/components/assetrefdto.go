@@ -17,8 +17,8 @@ const (
 
 // AssetRefDto - A reference to a digital asset, either stored in S3 or accessible via URL. Files are streamed efficiently to temporary storage during processing to minimize memory usage.
 type AssetRefDto struct {
-	S3           *S3           `queryParam:"inline" name:"AssetRefDto"`
-	PresignedURL *PresignedURL `queryParam:"inline" name:"AssetRefDto"`
+	S3           *S3           `queryParam:"inline" union:"member"`
+	PresignedURL *PresignedURL `queryParam:"inline" union:"member"`
 
 	Type AssetRefDtoType
 }

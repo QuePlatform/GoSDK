@@ -116,8 +116,8 @@ const (
 )
 
 type Signer struct {
-	SignerUseMainSigner *SignerUseMainSigner `queryParam:"inline" name:"signer"`
-	SignerSeparate      *SignerSeparate      `queryParam:"inline" name:"signer"`
+	SignerUseMainSigner *SignerUseMainSigner `queryParam:"inline" union:"member"`
+	SignerSeparate      *SignerSeparate      `queryParam:"inline" union:"member"`
 
 	Type SignerType
 }

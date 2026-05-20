@@ -140,8 +140,8 @@ const (
 
 // SignerRefDto - Reference to credentials for signing.
 type SignerRefDto struct {
-	SignerRefDtoEnv   *SignerRefDtoEnv   `queryParam:"inline" name:"SignerRefDto"`
-	SignerRefDtoLocal *SignerRefDtoLocal `queryParam:"inline" name:"SignerRefDto"`
+	SignerRefDtoEnv   *SignerRefDtoEnv   `queryParam:"inline" union:"member"`
+	SignerRefDtoLocal *SignerRefDtoLocal `queryParam:"inline" union:"member"`
 
 	Type SignerRefDtoType
 }
