@@ -1,9 +1,9 @@
-speakeasyVersion: 1.621.1
+speakeasyVersion: 1.789.0
 sources:
     Que API:
         sourceNamespace: que-api
-        sourceRevisionDigest: sha256:80df4c9999cdc7c286e30ee79425ec574be16294d3b8b890ffba773dce254dc8
-        sourceBlobDigest: sha256:022738a40948c2fe68b0f5fa760cf5197b333d62458755a7aefcdbb8b02030e3
+        sourceRevisionDigest: sha256:378482f111b124124ecfee0dffb165620be4c2c8f12dbcf22aec7894cf29d61c
+        sourceBlobDigest: sha256:8ab95644915c337c31808d56e999eb72eb2c129f76247cc3c07cf77ab803502e
         tags:
             - latest
             - 1.0.0
@@ -11,10 +11,10 @@ targets:
     que:
         source: Que API
         sourceNamespace: que-api
-        sourceRevisionDigest: sha256:80df4c9999cdc7c286e30ee79425ec574be16294d3b8b890ffba773dce254dc8
-        sourceBlobDigest: sha256:022738a40948c2fe68b0f5fa760cf5197b333d62458755a7aefcdbb8b02030e3
+        sourceRevisionDigest: sha256:378482f111b124124ecfee0dffb165620be4c2c8f12dbcf22aec7894cf29d61c
+        sourceBlobDigest: sha256:8ab95644915c337c31808d56e999eb72eb2c129f76247cc3c07cf77ab803502e
         codeSamplesNamespace: que-api-go-code-samples
-        codeSamplesRevisionDigest: sha256:f9ee0897034fac1730add87060d92762041043f0d4943dab3ce5d2d2cefd1dff
+        codeSamplesRevisionDigest: sha256:2b57aad98d03ba4da44a8a7bd4a0f76784cce9dc51e7595793f0f418a246d318
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
