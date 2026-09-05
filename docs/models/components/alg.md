@@ -2,6 +2,16 @@
 
 The cryptographic algorithm used for signing.
 
+## Example Usage
+
+```go
+import (
+	"github.com/QuePlatform/GoSDK/models/components"
+)
+
+value := components.AlgEs256
+```
+
 
 ## Values
 

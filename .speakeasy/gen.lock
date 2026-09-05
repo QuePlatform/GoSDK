@@ -3,128 +3,435 @@ id: ddf9e346-bb43-4ccc-aaae-95e233eb6f3f
 management:
   docChecksum: 5be1033d3fcd17c8b64f613200c1ef01
   docVersion: 1.0.0
-  speakeasyVersion: 1.621.1
-  generationVersion: 2.708.2
-  releaseVersion: 0.0.2
-  configChecksum: 0f69a66bb8df56df0a1727293f910ef9
+  speakeasyVersion: 1.796.4
+  generationVersion: 2.935.1
+  releaseVersion: 0.1.0
+  configChecksum: cace9004a5f448af7d0c0565f8085e01
+  repoURL: https://github.com/QuePlatform/GoSDK.git
+  installationURL: https://github.com/QuePlatform/GoSDK
+persistentEdits:
+  generation_id: 24f05373-9501-48bd-9b2d-7948a5ac6dfa
+  pristine_commit_hash: 5ddab5a5b4a66307b749263cf6c9440a81186508
+  pristine_tree_hash: 6b4b02cd75d6372052f395d528cb10a2a27b2a05
 features:
   go:
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.12
-    core: 3.11.0
+    constsAndDefaults: 0.1.14
+    core: 3.13.53
     defaultEnabledRetries: 0.2.0
     devContainers: 2.90.0
     envVarSecurityUsage: 0.3.2
-    globalSecurity: 2.82.12
+    globalSecurity: 2.82.15
     globalSecurityCallbacks: 0.1.0
     globalSecurityFlattening: 0.1.0
-    globalServerURLs: 2.82.3
+    globalServerURLs: 2.83.1
     intellisenseMarkdownSupport: 0.1.0
-    nullables: 0.2.0
+    nullables: 0.2.1
     responseFormat: 0.1.2
-    retries: 2.84.2
-    sdkHooks: 0.2.0
-    unions: 2.85.14
-generatedFiles:
-  - .devcontainer/README.md
-  - .devcontainer/devcontainer.json
-  - .devcontainer/setup.sh
-  - .gitattributes
-  - /models/apierrors/problemresponseerror.go
-  - /models/components/assetrefdto.go
-  - /models/components/cawgidentitydto.go
-  - /models/components/cawgverifydto.go
-  - /models/components/healthzresponse.go
-  - /models/components/httpmetadata.go
-  - /models/components/limitsdto.go
-  - /models/components/presignedurl.go
-  - /models/components/presignresponse.go
-  - /models/components/problemresponseerror.go
-  - /models/components/s3.go
-  - /models/components/security.go
-  - /models/components/signerrefdto.go
-  - /models/components/signrequest.go
-  - /models/components/signresponse.go
-  - /models/components/trustlistresponse.go
-  - /models/components/verifyrequest.go
-  - /models/components/verifyresponse.go
-  - /models/operations/gethealthcheck.go
-  - /models/operations/getpresignedurl.go
-  - /models/operations/gettrustlist.go
-  - /models/operations/signasset.go
-  - /models/operations/verifyasset.go
-  - USAGE.md
-  - assetmanagement.go
-  - docs/models/apierrors/problemresponseerror.md
-  - docs/models/components/alg.md
-  - docs/models/components/assetrefdto.md
-  - docs/models/components/assurance.md
-  - docs/models/components/cawgidentitydto.md
-  - docs/models/components/cawgverifydto.md
-  - docs/models/components/data.md
-  - docs/models/components/default.md
-  - docs/models/components/details.md
-  - docs/models/components/evidence.md
-  - docs/models/components/healthzresponse.md
-  - docs/models/components/httpmetadata.md
-  - docs/models/components/limitsdto.md
-  - docs/models/components/mode.md
-  - docs/models/components/policy.md
-  - docs/models/components/presignedurl.md
-  - docs/models/components/presignresponse.md
-  - docs/models/components/s3.md
-  - docs/models/components/security.md
-  - docs/models/components/signer.md
-  - docs/models/components/signerrefdto.md
-  - docs/models/components/signerrefdtoenv.md
-  - docs/models/components/signerrefdtolocal.md
-  - docs/models/components/signerseparate.md
-  - docs/models/components/signerusemainsigner.md
-  - docs/models/components/signingalg.md
-  - docs/models/components/signrequest.md
-  - docs/models/components/signresponse.md
-  - docs/models/components/trustlistresponse.md
-  - docs/models/components/typeenv.md
-  - docs/models/components/typelocal.md
-  - docs/models/components/typeseparate.md
-  - docs/models/components/typeusemainsigner.md
-  - docs/models/components/verifyrequest.md
-  - docs/models/components/verifyresponse.md
-  - docs/models/operations/gethealthcheckresponse.md
-  - docs/models/operations/getpresignedurlresponse.md
-  - docs/models/operations/gettrustlistresponse.md
-  - docs/models/operations/option.md
-  - docs/models/operations/signassetresponse.md
-  - docs/models/operations/verifyassetresponse.md
-  - docs/sdks/assetmanagement/README.md
-  - docs/sdks/que/README.md
-  - docs/sdks/utility/README.md
-  - go.mod
-  - internal/config/sdkconfiguration.go
-  - internal/hooks/hooks.go
-  - internal/utils/contenttype.go
-  - internal/utils/env.go
-  - internal/utils/form.go
-  - internal/utils/headers.go
-  - internal/utils/json.go
-  - internal/utils/pathparams.go
-  - internal/utils/queryparams.go
-  - internal/utils/requestbody.go
-  - internal/utils/retries.go
-  - internal/utils/security.go
-  - internal/utils/utils.go
-  - models/apierrors/apierror.go
-  - models/operations/options.go
-  - optionalnullable/optionalnullable.go
-  - optionalnullable/optionalnullable_test.go
-  - que.go
-  - retry/config.go
-  - types/bigint.go
-  - types/date.go
-  - types/datetime.go
-  - types/decimal.go
-  - types/pointers.go
-  - utility.go
+    retries: 2.84.5
+    sdkHooks: 0.3.1
+    unions: 2.87.10
+trackedFiles:
+  .devcontainer/README.md:
+    id: b170c0f184ac
+    last_write_checksum: sha1:dac084f449c386bff992a8940845d29f74de131d
+    pristine_git_object: 99925f0b34938bad98824ac988350e171d09deb0
+  .devcontainer/devcontainer.json:
+    id: b34062a34eb1
+    last_write_checksum: sha1:00c39389eee01217e51057762bde7339d9e56114
+    pristine_git_object: 8f01e56e2f8476fb2a7c79ec6326b3b0d5be8123
+  .devcontainer/setup.sh:
+    id: 5f1dfbfeb8eb
+    last_write_checksum: sha1:0443cc8beac352499afd25be90adf28d3736dbe0
+    pristine_git_object: 9003242ad92f98da28b1e4dad2129b5b1dabab59
+  .gitattributes:
+    id: 24139dae6567
+    last_write_checksum: sha1:84b0115789fc3ea52e31df701d8a27f76077e29f
+    pristine_git_object: e6a994416d0f527912d2d272e2583458f4fc9bcb
+  USAGE.md:
+    id: 3aed33ce6e6f
+    last_write_checksum: sha1:c34bd159150fd7a61b5144dccc68ce22747ccc8a
+    pristine_git_object: 6744aeb0b52fadb09f8560a3832af4c1a63b810f
+  assetmanagement.go:
+    id: 8d68a2bd7f59
+    last_write_checksum: sha1:53ebddb62dc1ecf2833aeb9c8f10985a12d5222a
+    pristine_git_object: 221cf59a3644731610ee535721b6293ed651f311
+  docs/models/apierrors/problemresponseerror.md:
+    id: 6c70f0f76b97
+    last_write_checksum: sha1:ac3c4a65727b668d80272f8a4e9953d0ebff8529
+    pristine_git_object: fdd66b4e10821d474db28f22d93073ea1cab8f0d
+  docs/models/components/alg.md:
+    id: 0832f6623e13
+    last_write_checksum: sha1:2db2678aa7d77702e5aa4f9549088d62dd994daa
+    pristine_git_object: 20414ac5c11c2244220aaa5531d77b29bef06b60
+  docs/models/components/assetrefdto.md:
+    id: 60a2e9155bcb
+    last_write_checksum: sha1:332a1c3398752399306796e78590dabdd62f5d00
+    pristine_git_object: 9f2098ace4b9a535ad365b63029b5d0d37659638
+  docs/models/components/assurance.md:
+    id: 91c32684a000
+    last_write_checksum: sha1:0d2165974d9e5ee4feefbb0fc33aebfc72f2a1d6
+    pristine_git_object: c10c4e6c3ea87102fb5e355a4c9f0cc9205e4000
+  docs/models/components/cawgidentitydto.md:
+    id: 1f5745880db7
+    last_write_checksum: sha1:dc113276be3f818ae9ff0664181eb84ff44c8826
+    pristine_git_object: 8e31566905cd85123d35c9731c1525c8e71e6e11
+  docs/models/components/cawgverifydto.md:
+    id: 49766fcba1d9
+    last_write_checksum: sha1:5c4263c0187d75563dbf3c729472d529e792705c
+    pristine_git_object: e78b42dda5ae5bbe96bd07c1824ab843cf92e76e
+  docs/models/components/data.md:
+    id: 3f89c52c2b17
+    last_write_checksum: sha1:d09db6ae127f064f089f08693c915e8d9ec118ce
+    pristine_git_object: 8007ae0452b3d549d5bc751b2be90530ae7683d7
+  docs/models/components/default.md:
+    id: 2fb59bd5b496
+    last_write_checksum: sha1:6472889f327d2e405c8f9e9a7c95a23413ffc5a3
+    pristine_git_object: 85b5c500826c45ac79512064e2ecf8629bfc2427
+  docs/models/components/details.md:
+    id: 77e2686696cf
+    last_write_checksum: sha1:310eebcac8d7f0825c0f14a57c3bfe6d4f772150
+    pristine_git_object: fa0f38500a1b56be819dc646151583aca2c472a7
+  docs/models/components/evidence.md:
+    id: 7f0844aa336e
+    last_write_checksum: sha1:3896bf316dacde16028f03128db212a7c2cdede4
+    pristine_git_object: 06db7572601f820786b68286e975234756439af5
+  docs/models/components/healthzresponse.md:
+    id: bb971afa5502
+    last_write_checksum: sha1:0a6e5a7aaea0c5ce101dba3e0b4a6be140dca138
+    pristine_git_object: 4b81963849b410cef8921f0e48bee8aec93667d1
+  docs/models/components/httpmetadata.md:
+    id: 728948c70168
+    last_write_checksum: sha1:7c40945dac218ce5e5e11e7c907d27a3ea14c417
+    pristine_git_object: df1fdd59f3c85e4ba70573ff7954b12ac1d33d08
+  docs/models/components/limitsdto.md:
+    id: 85fca5b7c518
+    last_write_checksum: sha1:1147f73c0371f490a3f1731fb4507bf89211759c
+    pristine_git_object: b7a27d3132218ee04214c6cb6a2d48806c1ecdb7
+  docs/models/components/mode.md:
+    id: ecad6afdf106
+    last_write_checksum: sha1:2627af20fc3f86347eb3f6b9b7d40f2bee2e2df6
+    pristine_git_object: bb10d16d37b11297848b74f546de097c356f2af0
+  docs/models/components/policy.md:
+    id: 66c097e1389b
+    last_write_checksum: sha1:4ba333251121ba0b14e505822e81fdd7e926db4b
+    pristine_git_object: e29c363e0b3d4ab7865cd9ac4e4e24f2138946e3
+  docs/models/components/presignedurl.md:
+    id: ac7ae849cba3
+    last_write_checksum: sha1:1b498d545f71f221fa6b4d88dcd2d7d26de87fad
+    pristine_git_object: daf3e029285e72c74c944bf1b4474c917ec17015
+  docs/models/components/presignresponse.md:
+    id: df43e1a16d30
+    last_write_checksum: sha1:e70996161706f0f069b9af19b0fb41eb09d828c8
+    pristine_git_object: 81a6f4c90fb2abe57b2d6641e611fc2fb6b8c995
+  docs/models/components/s3.md:
+    id: ea09ec58fac0
+    last_write_checksum: sha1:8e7bebe283619aad829fbb5b1817a6003b101aba
+    pristine_git_object: 5437930b6ed865bbcad4ead7b26b3f1334932886
+  docs/models/components/security.md:
+    id: 54906b49ea28
+    last_write_checksum: sha1:931116ded4c19d850b2002eaa7908a84d52c95ac
+    pristine_git_object: 2e1cdccf4ca9311e096aed12fae56dd745abc447
+  docs/models/components/signer.md:
+    id: 55f087340ce3
+    last_write_checksum: sha1:3374f4010258a2dc763052427c055e5ce1d80263
+    pristine_git_object: 24f8cc4ceab855344a3e8f06bf696f8fed6fc5c0
+  docs/models/components/signerrefdto.md:
+    id: ef236d4e8c32
+    last_write_checksum: sha1:9d0b0a37bdefe9ece156e98542ca96c83eda4c0b
+    pristine_git_object: a34d3a8b3ba7c2ddd11084b5e61c18b6cd911372
+  docs/models/components/signerrefdtoenv.md:
+    id: a49932414e7f
+    last_write_checksum: sha1:00e6530f310b6906a3d7af03a5287e38c81789d3
+    pristine_git_object: f3751d8cc715ab1550a2c389f60a9d57d823167e
+  docs/models/components/signerrefdtolocal.md:
+    id: 26e1a4b675fe
+    last_write_checksum: sha1:422aa719cdf5cfedc7d66e175bcf087b0fa23988
+    pristine_git_object: 939d5b130ae84079c1e53cd5c3628f450402d8ad
+  docs/models/components/signerseparate.md:
+    id: 8ac98c808484
+    last_write_checksum: sha1:58dfde10f0791dff4b2c6c2ee890e935dab9ea63
+    pristine_git_object: 37020574d37589e89cf6f992f580feaf7cb6c085
+  docs/models/components/signerusemainsigner.md:
+    id: 50eadbbfb164
+    last_write_checksum: sha1:8e50315516ace153c8993381d17e4b3bc58181e9
+    pristine_git_object: 4fea38c8b3c312002d708572b06a25e758ef8fb6
+  docs/models/components/signingalg.md:
+    id: 41d75e26fdc1
+    last_write_checksum: sha1:8274db2efc36144dae11aa910c18fd970310b0a4
+    pristine_git_object: 8122e8826aa0e3c9bafabc7b98219d66b3b60f95
+  docs/models/components/signrequest.md:
+    id: af3246edab70
+    last_write_checksum: sha1:3456cae03a6b8c4cf0a767dea067d8bc1b5cc9a2
+    pristine_git_object: a7fe6fa816aa019a4d1945141e0f4bdd7a100468
+  docs/models/components/signresponse.md:
+    id: f41a2b227727
+    last_write_checksum: sha1:3055dd9bf05bb4a09dc9e54797c5b0b741fe0952
+    pristine_git_object: 435e806371d9035869375a5158608f09878c1ca0
+  docs/models/components/trustlistresponse.md:
+    id: 774fa969e2c8
+    last_write_checksum: sha1:5a0da3c755f9ce0bd0ea6797ad3ff2b26470bd8b
+    pristine_git_object: 46ad41144d6118ea00989d4c273c2cfcffc9eebd
+  docs/models/components/typeenv.md:
+    id: 34fb5508d1ac
+    last_write_checksum: sha1:c097aba4f7601b51e4b32952b077570b935238ec
+    pristine_git_object: 7ff2eac5ab49e4d06ea3e89ecf5047daa2db3bd0
+  docs/models/components/typelocal.md:
+    id: 089ae9c45861
+    last_write_checksum: sha1:4e517c942ada12cf2dc2c412f3cce7d2027f8bf9
+    pristine_git_object: 3626b9d8ce61b1b97426ddf1645f1b81bddc0774
+  docs/models/components/typeseparate.md:
+    id: 5076394bc418
+    last_write_checksum: sha1:2c79698715fe59af26f8c2d4e67af5e0b62810bf
+    pristine_git_object: f6fa67d54c468cfdd1ee9d5861701670bf70b67e
+  docs/models/components/typeusemainsigner.md:
+    id: 9adac20e8ea3
+    last_write_checksum: sha1:eb641e3cdea9c36262f1ad0c5bd53f53ce2350a9
+    pristine_git_object: 65bd4bc8cca39cf672a76216f479cb150d930b13
+  docs/models/components/verifyrequest.md:
+    id: 3b1500c32f3b
+    last_write_checksum: sha1:60af4e570d3d71dd9dc34237aa995d5ec7f5137e
+    pristine_git_object: 5b344eb2bda0a3e9cea1ab10cbd96bf75f1c3761
+  docs/models/components/verifyresponse.md:
+    id: 0a1ec4b5e18f
+    last_write_checksum: sha1:e3691bb3a47f41dd8af4746e18a64143cbdd123f
+    pristine_git_object: 53a567ef74a23cc114e63f61af245d8a6a48152f
+  docs/models/operations/gethealthcheckresponse.md:
+    id: 3b838c87f1bc
+    last_write_checksum: sha1:10027a9673a36e52c64147946cb6fb7caed641cd
+    pristine_git_object: 2e4c7321900ce39c7a983a72bfa3b5a2dac95438
+  docs/models/operations/getpresignedurlresponse.md:
+    id: 19f0cd317b46
+    last_write_checksum: sha1:10c74ddf6c98908fd8de32cd76874efc3d9dfbb2
+    pristine_git_object: 4a4fbf4239aae0828625812b63d1b0e3b79d4bfb
+  docs/models/operations/gettrustlistresponse.md:
+    id: 298366b602b6
+    last_write_checksum: sha1:1c9c667759c7f258f1e4fae30777419862c22f54
+    pristine_git_object: cb1d5a83fd226db040c99afd1f46576cbebf8ef4
+  docs/models/operations/option.md:
+    id: 2ac1bd52a5fb
+    last_write_checksum: sha1:70bcdc6bbec331994ed5b0c4fcdd714055c57b38
+    pristine_git_object: 60064f7a52665a1367456e404a9915bceca08549
+  docs/models/operations/signassetresponse.md:
+    id: 9cc5f8b80909
+    last_write_checksum: sha1:dbe8ebc2a1fe281903262ae06a4005f28919058a
+    pristine_git_object: 1269db48ba17fc8c4562f0e3c8c3fbf28470fc5c
+  docs/models/operations/verifyassetresponse.md:
+    id: 31f03823d14b
+    last_write_checksum: sha1:215de0564d755c8cbe62bb8e8295776e2461e14b
+    pristine_git_object: 83aea67eea87f4c9ffb38f37d37e56f5dba5bcaa
+  docs/sdks/assetmanagement/README.md:
+    id: 0d073009d093
+    last_write_checksum: sha1:478eae78e3a3d93ca7336c6852fdb7a207ab5252
+    pristine_git_object: 0aadc609954f60629da3842b29b58f28e48f5f4c
+  docs/sdks/que/README.md:
+    id: 10be3e19316d
+    last_write_checksum: sha1:5f7dc597e53745b0800df2aaa66da48fcee1d09e
+    pristine_git_object: 557f8be66a9e783309932f46e862c81dfc102d20
+  docs/sdks/utility/README.md:
+    id: acc49cb73a09
+    last_write_checksum: sha1:dd54d1e95cdf45f7ff388de860446b0dd90b46b9
+    pristine_git_object: e3f3783e6dedffc4388f1781ffe845cd9a164873
+  go.mod:
+    id: c47645c391ad
+    last_write_checksum: sha1:b4e7b398551adb0a8b13af72113bd85ef55c586b
+    pristine_git_object: 6afbf157148c01a946fca967ee517eff4118233f
+  internal/config/sdkconfiguration.go:
+    id: 33b8bfac5265
+    last_write_checksum: sha1:954e340073920460214fbb069fec892c1414f536
+    pristine_git_object: a3f479379bcc58a4463196b703e85335f3d07262
+  internal/hooks/hooks.go:
+    id: 336be70ed5c0
+    last_write_checksum: sha1:6b834821109b9380ddad5fab93048e90085aaeb2
+    pristine_git_object: 8c36cacbfbb9826e17836b352777ef456bee214d
+  internal/utils/contenttype.go:
+    id: 928a56fe6755
+    last_write_checksum: sha1:ab5cfd860d02c6e6a37f89e2b5649a9859947fb1
+    pristine_git_object: f6487e01eb987c0aa49e7aa50b5ff24830314c63
+  internal/utils/env.go:
+    id: ac8bab30c73d
+    last_write_checksum: sha1:1e0bcb2d2caed9f3657f1dbc99b55811bed0298c
+    pristine_git_object: 110d464eacf2387b347bad1cb903666354a339e9
+  internal/utils/form.go:
+    id: 8ea133d76535
+    last_write_checksum: sha1:331f3c7a5f8aec066f320721da208f8fcc566f38
+    pristine_git_object: 79eaf36445969dc2fef1e522f3ede3c2a6caf2b4
+  internal/utils/headers.go:
+    id: 90d4f18d4adf
+    last_write_checksum: sha1:342c21da2baf9360585574bda78b6e86187e33e6
+    pristine_git_object: edb956d97f001b6232dd48ceeb9319d6bfa5ca45
+  internal/utils/json.go:
+    id: ad03e3c502d8
+    last_write_checksum: sha1:d9a703558379053dd3e254660682731577376f78
+    pristine_git_object: 3642ff263b61f31b37c36544d03ba0fb33cc24e0
+  internal/utils/pathparams.go:
+    id: 1f3e0c30fd90
+    last_write_checksum: sha1:aa6d7980f87d494c1fd957d44a9e66634a7be24a
+    pristine_git_object: 3f053d61bbb6d34ce3a3e37ebfe52dd6e0b20091
+  internal/utils/queryparams.go:
+    id: e7f604e65a58
+    last_write_checksum: sha1:71fc2b9dfffde8fd700de3e7063e9878544d5547
+    pristine_git_object: 7f4e991dc250e633b96138bf9f9b9375a4a961d2
+  internal/utils/requestbody.go:
+    id: 22445ec1c044
+    last_write_checksum: sha1:0256f5dade709d5659f0c8ec66000bf017048699
+    pristine_git_object: 682a9dda457dd5392948c314378cd839eedce4d3
+  internal/utils/retries.go:
+    id: b5e011d15c2d
+    last_write_checksum: sha1:484445cd6cb7613f29f83645c2b926815b666d83
+    pristine_git_object: b8ef16b11bfb3ab7df8d98c58e656b76158ff5d0
+  internal/utils/security.go:
+    id: eeb54c55241b
+    last_write_checksum: sha1:1c0b332b3cf0fa405df0c5bf4e03f335139566b6
+    pristine_git_object: 7c1a372ae314a9d82ab82c3db610e7ffe67ecfab
+  internal/utils/union.go:
+    id: db86c85746b6
+    last_write_checksum: sha1:53160b8ecfd15b4e567e63e286d85dd65d59e6fc
+    pristine_git_object: a2f227b03e8e2cd71f016c4018e90d0cfc8a9877
+  internal/utils/union_test.go:
+    id: 4b56247171bd
+    last_write_checksum: sha1:bd5c7506e1d6238117c1ac4e340314a5a41401b5
+    pristine_git_object: 138f7e2a066b10dffd0a9957ecfcab9e00dd26fe
+  internal/utils/utils.go:
+    id: 1133b2a27019
+    last_write_checksum: sha1:383781754b285e8a2f3e89c6ef6c5f82cee3511f
+    pristine_git_object: 5518b675fbcc625c6f55e69dd466434101004228
+  models/apierrors/apierror.go:
+    id: 4cecf27a5a54
+    last_write_checksum: sha1:e699d3325ea82ea2b0d29656396210f0513c3391
+    pristine_git_object: 61a9628a6533548245be5af929f1d4f96dd780b5
+  models/apierrors/problemresponseerror.go:
+    id: 4d9e561fca70
+    last_write_checksum: sha1:cfaf47631b3927b4e07d6129a05ecda9ea33e4f9
+    pristine_git_object: d3c8058456809c461ecc7fddb421fb7e3733ea89
+  models/components/assetrefdto.go:
+    id: 0b96db522a2e
+    last_write_checksum: sha1:2904b35f112419a97dc8533b36da66e153c240b9
+    pristine_git_object: 3e7ab0a04b73f67d7e2a87245081a220d2b80332
+  models/components/cawgidentitydto.go:
+    id: d16c59fcc91e
+    last_write_checksum: sha1:7809453770dd11de8ed7b1f01eb6bc948b574e7a
+    pristine_git_object: 2280766303aa42fe9cb9932ab67e178e8c3697e8
+  models/components/cawgverifydto.go:
+    id: e88cf2e0a1c2
+    last_write_checksum: sha1:ae8c22c0b593d1c919bf8769390264cb54da1e47
+    pristine_git_object: e80b5d5b40c581996f556e83b84a05496b22e731
+  models/components/healthzresponse.go:
+    id: 41173de19637
+    last_write_checksum: sha1:2c0cf507972ebe7bdd424df47572d3c4a08a204c
+    pristine_git_object: 882bf4dfb37644992fe70695716147ce8f632f3a
+  models/components/httpmetadata.go:
+    id: 790bad4a7abb
+    last_write_checksum: sha1:01a20fcff33179809ff9920ee431c7adabbd98f1
+    pristine_git_object: 148ec47fb2dea6c188ec68eb3532d93169608168
+  models/components/limitsdto.go:
+    id: fa9b43209734
+    last_write_checksum: sha1:64e8b197f0a82e41772b972ecbe0fb5d05cdab85
+    pristine_git_object: defcc2e335e2cc5d1a1b7dd9651ad17c86e1473d
+  models/components/presignedurl.go:
+    id: 96a91255e693
+    last_write_checksum: sha1:79a2f4e2e516837c19ce9bed4312fa304bf228e2
+    pristine_git_object: 0a99c04c50ad26cf8d44cc00735421b531dd3889
+  models/components/presignresponse.go:
+    id: be06c89593af
+    last_write_checksum: sha1:72452372bde8e6053b74e74fccfb115a26bc5998
+    pristine_git_object: 622d64e47b62aff6aaeef72dba359505fa17f2c9
+  models/components/problemresponseerror.go:
+    id: ec128a329647
+    last_write_checksum: sha1:9b0cadb95ae23a3b4107af4783309eef00288a2d
+    pristine_git_object: cd8e104c631dcde03f47e789bf82e641ba58c008
+  models/components/s3.go:
+    id: 0836c7500ee3
+    last_write_checksum: sha1:5ca9182a67476bf1a92dd0c7288bb03f1aa960ab
+    pristine_git_object: 769df523ab861933963706259852c3bee074e367
+  models/components/security.go:
+    id: 3a5eba5fe9e0
+    last_write_checksum: sha1:6efbdcb8b6cad761919b57ea913989a344c367ef
+    pristine_git_object: 1e5898d07cfd34d16e1278dbca909d8b91d8a06d
+  models/components/signerrefdto.go:
+    id: 37baf9d1c157
+    last_write_checksum: sha1:a74578e183124730b79edb222bed189f9080d5fe
+    pristine_git_object: 172f9d4fb41bf38cceb8382e9d75da733bb33591
+  models/components/signrequest.go:
+    id: 739bfd6770a8
+    last_write_checksum: sha1:40f622e81711c3c7cd8cdf940a2b7ec85a1524e0
+    pristine_git_object: 89c8291aecea4b8fe1b71eb89b714ec9b60d1998
+  models/components/signresponse.go:
+    id: 4f10c9ae21c5
+    last_write_checksum: sha1:d77f216b15fed5d82e06d10a3142bd785870bc46
+    pristine_git_object: dd587bc4a2e11f20ef466a7be72351b53ab6e97b
+  models/components/trustlistresponse.go:
+    id: c4bc0902ab77
+    last_write_checksum: sha1:34fc1285728d7a1369b3a5225dcaeaa5ceffbd5a
+    pristine_git_object: 182053e5bb58551dc51d9ba3acc8ba458b71d3fb
+  models/components/verifyrequest.go:
+    id: 97db187dcfaf
+    last_write_checksum: sha1:c57bcc8b2ebbc8ffa08de5896d136f7540190fbb
+    pristine_git_object: b13b4bd43ef40d7ca3a716a4e3c2379da2e50fda
+  models/components/verifyresponse.go:
+    id: bc24869d56eb
+    last_write_checksum: sha1:5fd05ad47dafcd9bbf829224f1ff5f317868bd65
+    pristine_git_object: 4318dd53df29687a61489faa75b4cdb4b3ff15ab
+  models/operations/gethealthcheck.go:
+    id: 76326de0d106
+    last_write_checksum: sha1:310e9c405bac01352786e65b4d97299dbbf08220
+    pristine_git_object: ff53844e755d8b1afb759ec6086053de898e4140
+  models/operations/getpresignedurl.go:
+    id: a4dcc473ba7d
+    last_write_checksum: sha1:56f0d15dff11322231ae6fb2748810ebb7a3e6e3
+    pristine_git_object: c4d758ef507adc444af6a20cc4ef5ca1a000604c
+  models/operations/gettrustlist.go:
+    id: 2422e6b00188
+    last_write_checksum: sha1:49cd45a0181ca5139acb10373d5947d528275010
+    pristine_git_object: 393b96904e3ad4215b51318d1a060f11bd85baa5
+  models/operations/options.go:
+    id: d20dd4db9865
+    last_write_checksum: sha1:57fbfc3d7a083d251d586526d2718399af07fa02
+    pristine_git_object: bd0c25fbba54045a375804441074e4d12a7b81af
+  models/operations/signasset.go:
+    id: 7b4a3f438113
+    last_write_checksum: sha1:ae202f47cc9140d524cbba9296ef9729585ce775
+    pristine_git_object: 0fefab587d6e7a52cce419110cd780a07c084b47
+  models/operations/verifyasset.go:
+    id: 3038c4f7d664
+    last_write_checksum: sha1:81c47885d6b0b4b7d37f7b23e143a3a92244f2b1
+    pristine_git_object: 7d1b3b58836e7860d358d664b254b20dda154cea
+  optionalnullable/optionalnullable.go:
+    id: ce60f259ead3
+    last_write_checksum: sha1:d6aff1a420c31e025ea21d46cf056e305ae76fe8
+    pristine_git_object: c6739be0619b6726565e0f11855ffe44b0e5607e
+  optionalnullable/optionalnullable_test.go:
+    id: ad67101ebca3
+    last_write_checksum: sha1:2e9433eff1651ac77d6678ea76880d9a4980cbc2
+    pristine_git_object: e6e5a01c6e721e879e24a38a1f97e3e27d4686d4
+  que.go:
+    id: 00b0e0822af6
+    last_write_checksum: sha1:edbfd6c75e29628289a2ffb3d92e491f1784c677
+    pristine_git_object: 8119906d9998e2d1f552b95bce75863e491192f1
+  retry/config.go:
+    id: 82d673cb0389
+    last_write_checksum: sha1:102d1953fbd7e9f312c4442c71ccca2eaaeaa27d
+    pristine_git_object: 767002c7898128324d8741ce9c534bd466492169
+  types/bigint.go:
+    id: 6f911e1a03c3
+    last_write_checksum: sha1:49b004005d0461fb04b846eca062b070b0360b31
+    pristine_git_object: 9c6a086d51595888a6ff787ebcb8693559afee95
+  types/date.go:
+    id: 231a623ce1b7
+    last_write_checksum: sha1:3036a2e1ed15a1d484c093367eba000c38f384d0
+    pristine_git_object: 5b2782f219efe6bfbce46fc2dec68998eb759438
+  types/datetime.go:
+    id: 5023aac30a47
+    last_write_checksum: sha1:196d050af6450669214e9ae4fd28e56263ae2b5d
+    pristine_git_object: 3eff332daa04e34cec5ffb10add670bafd8ac454
+  types/pointers.go:
+    id: 6d0d0a6cb6f3
+    last_write_checksum: sha1:fc2275ea006257ba9ba4ff6f2a2cdb6205371eef
+    pristine_git_object: 35c439d2661e08fcb6a854096fd7b9a8561b3938
+  utility.go:
+    id: c43c5a81957a
+    last_write_checksum: sha1:e30a5d8251e7cab1152c8fefbd62a67794bacf3d
+    pristine_git_object: 87737ba65620670ffb9fd24bb59c047f7eb7249c
 examples:
   verifyAsset:
     basic-verification:
@@ -228,3 +535,103 @@ examples:
         "500":
           application/problem+json: {"type": "about:blank", "title": "rate_limited", "status": 429, "code": "rate_limited", "detail": "try again in 5000 ms", "details": {}}
 examplesVersion: 1.0.2
+generatedFiles:
+  - .devcontainer/README.md
+  - .devcontainer/devcontainer.json
+  - .devcontainer/setup.sh
+  - .gitattributes
+  - /models/apierrors/problemresponseerror.go
+  - /models/components/assetrefdto.go
+  - /models/components/cawgidentitydto.go
+  - /models/components/cawgverifydto.go
+  - /models/components/healthzresponse.go
+  - /models/components/httpmetadata.go
+  - /models/components/limitsdto.go
+  - /models/components/presignedurl.go
+  - /models/components/presignresponse.go
+  - /models/components/problemresponseerror.go
+  - /models/components/s3.go
+  - /models/components/security.go
+  - /models/components/signerrefdto.go
+  - /models/components/signrequest.go
+  - /models/components/signresponse.go
+  - /models/components/trustlistresponse.go
+  - /models/components/verifyrequest.go
+  - /models/components/verifyresponse.go
+  - /models/operations/gethealthcheck.go
+  - /models/operations/getpresignedurl.go
+  - /models/operations/gettrustlist.go
+  - /models/operations/signasset.go
+  - /models/operations/verifyasset.go
+  - USAGE.md
+  - assetmanagement.go
+  - docs/models/apierrors/problemresponseerror.md
+  - docs/models/components/alg.md
+  - docs/models/components/assetrefdto.md
+  - docs/models/components/assurance.md
+  - docs/models/components/cawgidentitydto.md
+  - docs/models/components/cawgverifydto.md
+  - docs/models/components/data.md
+  - docs/models/components/default.md
+  - docs/models/components/details.md
+  - docs/models/components/evidence.md
+  - docs/models/components/healthzresponse.md
+  - docs/models/components/httpmetadata.md
+  - docs/models/components/limitsdto.md
+  - docs/models/components/mode.md
+  - docs/models/components/policy.md
+  - docs/models/components/presignedurl.md
+  - docs/models/components/presignresponse.md
+  - docs/models/components/s3.md
+  - docs/models/components/security.md
+  - docs/models/components/signer.md
+  - docs/models/components/signerrefdto.md
+  - docs/models/components/signerrefdtoenv.md
+  - docs/models/components/signerrefdtolocal.md
+  - docs/models/components/signerseparate.md
+  - docs/models/components/signerusemainsigner.md
+  - docs/models/components/signingalg.md
+  - docs/models/components/signrequest.md
+  - docs/models/components/signresponse.md
+  - docs/models/components/trustlistresponse.md
+  - docs/models/components/typeenv.md
+  - docs/models/components/typelocal.md
+  - docs/models/components/typeseparate.md
+  - docs/models/components/typeusemainsigner.md
+  - docs/models/components/verifyrequest.md
+  - docs/models/components/verifyresponse.md
+  - docs/models/operations/gethealthcheckresponse.md
+  - docs/models/operations/getpresignedurlresponse.md
+  - docs/models/operations/gettrustlistresponse.md
+  - docs/models/operations/option.md
+  - docs/models/operations/signassetresponse.md
+  - docs/models/operations/verifyassetresponse.md
+  - docs/sdks/assetmanagement/README.md
+  - docs/sdks/que/README.md
+  - docs/sdks/utility/README.md
+  - go.mod
+  - internal/config/sdkconfiguration.go
+  - internal/hooks/hooks.go
+  - internal/utils/contenttype.go
+  - internal/utils/env.go
+  - internal/utils/form.go
+  - internal/utils/headers.go
+  - internal/utils/json.go
+  - internal/utils/pathparams.go
+  - internal/utils/queryparams.go
+  - internal/utils/requestbody.go
+  - internal/utils/retries.go
+  - internal/utils/security.go
+  - internal/utils/utils.go
+  - models/apierrors/apierror.go
+  - models/operations/options.go
+  - optionalnullable/optionalnullable.go
+  - optionalnullable/optionalnullable_test.go
+  - que.go
+  - retry/config.go
+  - types/bigint.go
+  - types/date.go
+  - types/datetime.go
+  - types/decimal.go
+  - types/pointers.go
+  - utility.go
