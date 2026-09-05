@@ -2,7 +2,7 @@
 
 package que
 
-// Generated from OpenAPI doc version 1.0.0 and generator version 2.708.2
+// Generated from OpenAPI doc version 1.0.0 and generator version 2.935.1
 
 import (
 	"bytes"
@@ -85,7 +85,7 @@ type Que struct {
 
 type SDKOption func(*Que)
 
-// WithServerURL allows the overriding of the default server URL
+// WithServerURL allows providing an alternative server URL
 func WithServerURL(serverURL string) SDKOption {
 	return func(sdk *Que) {
 		sdk.sdkConfiguration.ServerURL = serverURL
@@ -167,10 +167,13 @@ func WithTimeout(timeout time.Duration) SDKOption {
 // New creates a new instance of the SDK with the provided options
 func New(opts ...SDKOption) *Que {
 	sdk := &Que{
-		SDKVersion: "0.0.2",
+		SDKVersion: "0.1.0",
 		sdkConfiguration: config.SDKConfiguration{
-			UserAgent:  "speakeasy-sdk/go 0.0.2 2.708.2 1.0.0 github.com/QuePlatform/GoSDK",
-			ServerList: ServerList,
+			UserAgent:         "speakeasy-sdk/go 0.1.0 2.935.1 1.0.0 github.com/QuePlatform/GoSDK",
+			SDKVersion:        "0.1.0",
+			GenVersion:        "2.935.1",
+			OpenAPIDocVersion: "1.0.0",
+			ServerList:        ServerList,
 			ServerVariables: []map[string]string{
 				{
 					"environment": "dev-api",
@@ -349,7 +352,7 @@ func (s *Que) VerifyAsset(ctx context.Context, request components.VerifyRequest,
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"400", "401", "403", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
@@ -646,7 +649,7 @@ func (s *Que) SignAsset(ctx context.Context, request components.SignRequest, opt
 
 			_, err = s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 			return nil, err
-		} else if utils.MatchStatusCodes([]string{"400", "401", "403", "422", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
+		} else if utils.MatchStatusCodes([]string{"4XX", "5XX"}, httpRes.StatusCode) {
 			_httpRes, err := s.hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 			if err != nil {
 				return nil, err
