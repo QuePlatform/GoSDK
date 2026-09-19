@@ -2,6 +2,16 @@
 
 Algorithm used for the CAWG identity signature.
 
+## Example Usage
+
+```go
+import (
+	"github.com/QuePlatform/GoSDK/models/components"
+)
+
+value := components.SigningAlgEd25519
+```
+
 
 ## Values
 
