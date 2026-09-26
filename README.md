@@ -166,14 +166,14 @@ func main() {
 <details open>
 <summary>Available methods</summary>
 
-### [AssetManagement](docs/sdks/assetmanagement/README.md)
-
-* [GetPresignedURL](docs/sdks/assetmanagement/README.md#getpresignedurl) - Get an S3 presigned URL for secure uploads
-
 ### [Que SDK](docs/sdks/que/README.md)
 
 * [VerifyAsset](docs/sdks/que/README.md#verifyasset) - Verify the C2PA manifest of an asset
 * [SignAsset](docs/sdks/que/README.md#signasset) - Sign an asset with a C2PA manifest
+
+### [AssetManagement](docs/sdks/assetmanagement/README.md)
+
+* [GetPresignedURL](docs/sdks/assetmanagement/README.md#getpresignedurl) - Get an S3 presigned URL for secure uploads
 
 ### [Utility](docs/sdks/utility/README.md)
 
@@ -395,7 +395,8 @@ func main() {
 	ctx := context.Background()
 
 	s := que.New(
-		que.WithEnvironment("<value>"),
+		que.WithServerIndex(0),
+		que.WithEnvironment("dev-api"),
 		que.WithSecurity(os.Getenv("QUE_API_KEY_AUTH")),
 	)
 
