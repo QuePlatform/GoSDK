@@ -116,8 +116,8 @@ const (
 )
 
 type Signer struct {
-	SignerUseMainSigner *SignerUseMainSigner `queryParam:"inline" name:"signer"`
-	SignerSeparate      *SignerSeparate      `queryParam:"inline" name:"signer"`
+	SignerUseMainSigner *SignerUseMainSigner `queryParam:"inline" union:"member"`
+	SignerSeparate      *SignerSeparate      `queryParam:"inline" union:"member"`
 
 	Type SignerType
 }
@@ -140,7 +140,14 @@ func CreateSignerSignerSeparate(signerSeparate SignerSeparate) Signer {
 	}
 }
 
-func (u *Signer) UnmarshalJSON(data []byte) error {
+func (u *Signer) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = Signer{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var signerSeparate SignerSeparate = SignerSeparate{}
 	if err := utils.UnmarshalJSON(data, &signerSeparate, "", true, nil); err == nil {
