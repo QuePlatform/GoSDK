@@ -17,3 +17,15 @@ assetRefDto := components.CreateAssetRefDtoS3(components.S3{/* values here */})
 assetRefDto := components.CreateAssetRefDtoPresignedURL(components.PresignedURL{/* values here */})
 ```
 
+## Union Discrimination
+
+Use the `Type` field to determine which variant is active, then access the corresponding field:
+
+```go
+switch assetRefDto.Type {
+	case components.AssetRefDtoTypeS3:
+		// assetRefDto.S3 is populated
+	case components.AssetRefDtoTypePresignedURL:
+		// assetRefDto.PresignedURL is populated
+}
+```
