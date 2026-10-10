@@ -140,8 +140,8 @@ const (
 
 // SignerRefDto - Reference to credentials for signing.
 type SignerRefDto struct {
-	SignerRefDtoEnv   *SignerRefDtoEnv   `queryParam:"inline" name:"SignerRefDto"`
-	SignerRefDtoLocal *SignerRefDtoLocal `queryParam:"inline" name:"SignerRefDto"`
+	SignerRefDtoEnv   *SignerRefDtoEnv   `queryParam:"inline" union:"member"`
+	SignerRefDtoLocal *SignerRefDtoLocal `queryParam:"inline" union:"member"`
 
 	Type SignerRefDtoType
 }
@@ -164,7 +164,14 @@ func CreateSignerRefDtoSignerRefDtoLocal(signerRefDtoLocal SignerRefDtoLocal) Si
 	}
 }
 
-func (u *SignerRefDto) UnmarshalJSON(data []byte) error {
+func (u *SignerRefDto) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = SignerRefDto{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var signerRefDtoEnv SignerRefDtoEnv = SignerRefDtoEnv{}
 	if err := utils.UnmarshalJSON(data, &signerRefDtoEnv, "", true, nil); err == nil {
