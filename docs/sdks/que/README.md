@@ -37,9 +37,9 @@ Analyzes a digital asset to find, validate, and report on any embedded C2PA mani
 The asset is processed using memory-efficient streaming to temporary storage during verification. Returns detailed validation results including trust status, signer information, and any validation failures.
 
 
-### Example Usage
+### Example Usage: basic-verification
 
-<!-- UsageSnippet language="go" operationID="verifyAsset" method="post" path="/v1/verify" -->
+<!-- UsageSnippet language="go" operationID="verifyAsset" method="post" path="/v1/verify" example="basic-verification" -->
 ```go
 package main
 
@@ -66,6 +66,49 @@ func main() {
             },
         ),
         IncludeCertificates: que.Pointer(true),
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.VerifyResponse != nil {
+        // handle response
+    }
+}
+```
+### Example Usage: detailed-verification
+
+<!-- UsageSnippet language="go" operationID="verifyAsset" method="post" path="/v1/verify" example="detailed-verification" -->
+```go
+package main
+
+import(
+	"context"
+	"os"
+	que "github.com/QuePlatform/GoSDK"
+	"github.com/QuePlatform/GoSDK/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := que.New(
+        que.WithSecurity(os.Getenv("QUE_API_KEY_AUTH")),
+    )
+
+    res, err := s.VerifyAsset(ctx, components.VerifyRequest{
+        Asset: components.CreateAssetRefDtoS3(
+            components.S3{
+                Bucket: "que-assets-dev",
+                Key: "uploads/document.pdf",
+            },
+        ),
+        Mode: que.Pointer("detailed"),
+        AllowRemoteManifests: que.Pointer(true),
+        IncludeCertificates: que.Pointer(true),
+        Limits: &components.LimitsDto{
+            MaxAssetSizeBytes: que.Pointer[int64](52428800),
+        },
     })
     if err != nil {
         log.Fatal(err)
@@ -104,9 +147,52 @@ Embeds a C2PA manifest into a digital asset and signs it using a server-side cry
 This operation cryptographically links the asset to its provenance information, creating an immutable record of the asset's origin, authorship, and any processing history.
 
 
-### Example Usage
+### Example Usage: advanced-signing
 
-<!-- UsageSnippet language="go" operationID="signAsset" method="post" path="/v1/sign" -->
+<!-- UsageSnippet language="go" operationID="signAsset" method="post" path="/v1/sign" example="advanced-signing" -->
+```go
+package main
+
+import(
+	"context"
+	"os"
+	que "github.com/QuePlatform/GoSDK"
+	"github.com/QuePlatform/GoSDK/models/components"
+	"log"
+)
+
+func main() {
+    ctx := context.Background()
+
+    s := que.New(
+        que.WithSecurity(os.Getenv("QUE_API_KEY_AUTH")),
+    )
+
+    res, err := s.SignAsset(ctx, components.SignRequest{
+        Asset: components.CreateAssetRefDtoS3(
+            components.S3{
+                Bucket: "que-assets-dev",
+                Key: "uploads/document.pdf",
+            },
+        ),
+        Mode: components.ModeServerMeasure,
+        ManifestJSON: que.Pointer("{\"title\":\"Signed Document\",\"assertions\":[{\"label\":\"stds.schema-org.CreativeWork\",\"data\":{\"@context\":\"https://schema.org\",\"@type\":\"CreativeWork\",\"author\":[{\"@type\":\"Person\",\"name\":\"John Author\"}]}}]}"),
+        Limits: &components.LimitsDto{
+            MaxAssetSizeBytes: que.Pointer[int64](104857600),
+            StreamTimeoutMs: que.Pointer[int64](60000),
+        },
+    })
+    if err != nil {
+        log.Fatal(err)
+    }
+    if res.SignResponse != nil {
+        // handle response
+    }
+}
+```
+### Example Usage: basic-signing
+
+<!-- UsageSnippet language="go" operationID="signAsset" method="post" path="/v1/sign" example="basic-signing" -->
 ```go
 package main
 
