@@ -5,6 +5,16 @@ The signing mode to use.
 * `client_hash`: The client provides the asset hash directly for offline signing. (Not yet implemented).
 
 
+## Example Usage
+
+```go
+import (
+	"github.com/QuePlatform/GoSDK/models/components"
+)
+
+value := components.ModeServerMeasure
+```
+
 
 ## Values
 

@@ -61,7 +61,7 @@ func (s SignRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (s *SignRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &s, "", false, []string{"asset", "mode"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
 		return err
 	}
 	return nil
