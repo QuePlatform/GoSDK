@@ -38,3 +38,6 @@ func (s *S3) GetKey() string {
 	}
 	return s.Key
 }
+
+// #region class-body-s3
+// #endregion class-body-s3
