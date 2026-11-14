@@ -34,7 +34,7 @@ func (v VerifyRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (v *VerifyRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &v, "", false, []string{"asset"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &v, "", false, nil); err != nil {
 		return err
 	}
 	return nil
