@@ -95,7 +95,7 @@ func (t TrustListResponse) MarshalJSON() ([]byte, error) {
 }
 
 func (t *TrustListResponse) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, []string{"version", "issued_at", "data"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
 		return err
 	}
 	return nil
