@@ -18,6 +18,13 @@ const (
 func (e TypeSeparate) ToPointer() *TypeSeparate {
 	return &e
 }
+
+// TypeSeparateValues returns every known TypeSeparate value in schema order.
+func TypeSeparateValues() []TypeSeparate {
+	return []TypeSeparate{
+		TypeSeparateSeparate,
+	}
+}
 func (e *TypeSeparate) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -72,6 +79,13 @@ const (
 func (e TypeUseMainSigner) ToPointer() *TypeUseMainSigner {
 	return &e
 }
+
+// TypeUseMainSignerValues returns every known TypeUseMainSigner value in schema order.
+func TypeUseMainSignerValues() []TypeUseMainSigner {
+	return []TypeUseMainSigner{
+		TypeUseMainSignerUseMainSigner,
+	}
+}
 func (e *TypeUseMainSigner) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -116,8 +130,8 @@ const (
 )
 
 type Signer struct {
-	SignerUseMainSigner *SignerUseMainSigner `queryParam:"inline" name:"signer"`
-	SignerSeparate      *SignerSeparate      `queryParam:"inline" name:"signer"`
+	SignerUseMainSigner *SignerUseMainSigner `queryParam:"inline" union:"member"`
+	SignerSeparate      *SignerSeparate      `queryParam:"inline" union:"member"`
 
 	Type SignerType
 }
@@ -140,7 +154,14 @@ func CreateSignerSignerSeparate(signerSeparate SignerSeparate) Signer {
 	}
 }
 
-func (u *Signer) UnmarshalJSON(data []byte) error {
+func (u *Signer) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = Signer{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var signerSeparate SignerSeparate = SignerSeparate{}
 	if err := utils.UnmarshalJSON(data, &signerSeparate, "", true, nil); err == nil {
@@ -183,6 +204,16 @@ const (
 
 func (e SigningAlg) ToPointer() *SigningAlg {
 	return &e
+}
+
+// SigningAlgValues returns every known SigningAlg value in schema order.
+func SigningAlgValues() []SigningAlg {
+	return []SigningAlg{
+		SigningAlgEd25519,
+		SigningAlgEs256,
+		SigningAlgEs384,
+		SigningAlgPs256,
+	}
 }
 func (e *SigningAlg) UnmarshalJSON(data []byte) error {
 	var v string

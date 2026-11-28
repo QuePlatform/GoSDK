@@ -19,6 +19,14 @@ const (
 func (e Assurance) ToPointer() *Assurance {
 	return &e
 }
+
+// AssuranceValues returns every known Assurance value in schema order.
+func AssuranceValues() []Assurance {
+	return []Assurance{
+		AssuranceServerMeasured,
+		AssuranceClientHash,
+	}
+}
 func (e *Assurance) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -46,6 +54,15 @@ const (
 
 func (e Alg) ToPointer() *Alg {
 	return &e
+}
+
+// AlgValues returns every known Alg value in schema order.
+func AlgValues() []Alg {
+	return []Alg{
+		AlgEs256,
+		AlgPs256,
+		AlgEd25519,
+	}
 }
 func (e *Alg) UnmarshalJSON(data []byte) error {
 	var v string

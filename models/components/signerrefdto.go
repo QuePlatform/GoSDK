@@ -18,6 +18,13 @@ const (
 func (e TypeLocal) ToPointer() *TypeLocal {
 	return &e
 }
+
+// TypeLocalValues returns every known TypeLocal value in schema order.
+func TypeLocalValues() []TypeLocal {
+	return []TypeLocal{
+		TypeLocalLocal,
+	}
+}
 func (e *TypeLocal) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -78,6 +85,13 @@ const (
 
 func (e TypeEnv) ToPointer() *TypeEnv {
 	return &e
+}
+
+// TypeEnvValues returns every known TypeEnv value in schema order.
+func TypeEnvValues() []TypeEnv {
+	return []TypeEnv{
+		TypeEnvEnv,
+	}
 }
 func (e *TypeEnv) UnmarshalJSON(data []byte) error {
 	var v string
@@ -140,8 +154,8 @@ const (
 
 // SignerRefDto - Reference to credentials for signing.
 type SignerRefDto struct {
-	SignerRefDtoEnv   *SignerRefDtoEnv   `queryParam:"inline" name:"SignerRefDto"`
-	SignerRefDtoLocal *SignerRefDtoLocal `queryParam:"inline" name:"SignerRefDto"`
+	SignerRefDtoEnv   *SignerRefDtoEnv   `queryParam:"inline" union:"member"`
+	SignerRefDtoLocal *SignerRefDtoLocal `queryParam:"inline" union:"member"`
 
 	Type SignerRefDtoType
 }
@@ -164,7 +178,14 @@ func CreateSignerRefDtoSignerRefDtoLocal(signerRefDtoLocal SignerRefDtoLocal) Si
 	}
 }
 
-func (u *SignerRefDto) UnmarshalJSON(data []byte) error {
+func (u *SignerRefDto) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = SignerRefDto{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
 	var signerRefDtoEnv SignerRefDtoEnv = SignerRefDtoEnv{}
 	if err := utils.UnmarshalJSON(data, &signerRefDtoEnv, "", true, nil); err == nil {
