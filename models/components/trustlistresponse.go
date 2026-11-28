@@ -20,6 +20,14 @@ const (
 func (e Default) ToPointer() *Default {
 	return &e
 }
+
+// DefaultValues returns every known Default value in schema order.
+func DefaultValues() []Default {
+	return []Default{
+		DefaultAllow,
+		DefaultDeny,
+	}
+}
 func (e *Default) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -95,7 +103,7 @@ func (t TrustListResponse) MarshalJSON() ([]byte, error) {
 }
 
 func (t *TrustListResponse) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &t, "", false, []string{"version", "issued_at", "data"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &t, "", false, nil); err != nil {
 		return err
 	}
 	return nil

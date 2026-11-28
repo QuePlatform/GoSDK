@@ -15,3 +15,15 @@ signer := components.CreateSignerSignerUseMainSigner(components.SignerUseMainSig
 signer := components.CreateSignerSignerSeparate(components.SignerSeparate{/* values here */})
 ```
 
+## Union Discrimination
+
+Use the `Type` field to determine which variant is active, then access the corresponding field:
+
+```go
+switch signer.Type {
+	case components.SignerTypeSignerUseMainSigner:
+		// signer.SignerUseMainSigner is populated
+	case components.SignerTypeSignerSeparate:
+		// signer.SignerSeparate is populated
+}
+```

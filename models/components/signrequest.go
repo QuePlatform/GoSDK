@@ -21,6 +21,14 @@ const (
 func (e Mode) ToPointer() *Mode {
 	return &e
 }
+
+// ModeValues returns every known Mode value in schema order.
+func ModeValues() []Mode {
+	return []Mode{
+		ModeServerMeasure,
+		ModeClientHash,
+	}
+}
 func (e *Mode) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -61,7 +69,7 @@ func (s SignRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (s *SignRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &s, "", false, []string{"asset", "mode"}); err != nil {
+	if err := utils.UnmarshalJSON(data, &s, "", false, nil); err != nil {
 		return err
 	}
 	return nil
